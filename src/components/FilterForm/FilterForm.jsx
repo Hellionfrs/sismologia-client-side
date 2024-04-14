@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function FilterForm({ onSubmit }) {
+function FilterForm({ onSubmit, magTypeList  }) {
   const [filters, setFilters] = useState({
     mag_type: "",
     page: "",
@@ -21,12 +21,18 @@ function FilterForm({ onSubmit }) {
     <form onSubmit={handleSubmit}>
       <label>
         Magnitude Type:
-        <input
-          type="text"
+        <select
           name="mag_type"
           value={filters.mag_type}
           onChange={handleChange}
-        />
+        >
+          <option value="">All</option>
+          {magTypeList.map((magType) => (
+            <option key={magType} value={magType}>
+              {magType}
+            </option>
+          ))}
+        </select>
       </label>
       <label>
         Page:
@@ -44,6 +50,8 @@ function FilterForm({ onSubmit }) {
           name="per_page"
           value={filters.per_page}
           onChange={handleChange}
+          min="1"
+          max="1000" // ajustar el valor máximo según tus necesidades
         />
       </label>
       <button type="submit">Apply Filters</button>
