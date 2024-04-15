@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FilterForm from "../FilterForm";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemList() {
   const [items, setItems] = useState([]);
@@ -32,12 +33,12 @@ function ItemList() {
   }, []);
 
   return (
-    <div>
-      <h2>Items</h2>
+    <div className="flex flex-col container mx-auto p-4 justify-center items-center gap-5">
+      <h2 className="text-xl font-semibold mb-4">Items</h2>
       <FilterForm onSubmit={fetchData} magTypeList={magTypeList} />
-      <ul>
+      <ul className="flex flex-wrap gap-4 justify-center">
         {items.map((item) => (
-          <li key={item.id}>{item.mag_type}</li>
+          <ItemDetail key={item.id}feature={item}/>
         ))}
       </ul>
     </div>

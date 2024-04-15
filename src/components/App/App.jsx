@@ -7,7 +7,7 @@ import ItemList from "../ItemList";
 
 function App() {
   return (
-    <div>
+    <div className="bg-white">
       <Navigation />
       <ItemList />
     </div>
