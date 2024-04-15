@@ -21,7 +21,7 @@ function ItemDetail({ feature }) {
         <p className="text-gray-700 text-base">
           <strong>Magnitude Type:</strong> {feature.mag_type}
         </p>
-        <p className="text-gray-700 text-base">
+        <p className="text-gray-700 text-base truncate">
           <strong>Title:</strong> {feature.title}
         </p>
         <p className="text-gray-700 text-base">
@@ -33,10 +33,10 @@ function ItemDetail({ feature }) {
       </div>
       <div className="px-6 py-4">
         <Link
-          to={`/features/${feature.id}/comments`}
-          className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          to={`/features/${feature.id}`}
+          className="inline-block w-full text-white text-center bg-gray-500 hover:bg-gray-700  hover:text-white py-1 px-2 rounded"
         >
-          Add Comment
+          Watch comments
         </Link>
       </div>
     </li>
