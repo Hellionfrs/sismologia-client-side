@@ -5,11 +5,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./components/App";
 import ItemList from "./components/ItemList";
 import FeaturePage from "./components/FeaturePage";
+import NotFoundPage from "./components/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <NotFoundPage />,
     children: [
       {
         index: true,
